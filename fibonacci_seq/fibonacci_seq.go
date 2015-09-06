@@ -21,7 +21,7 @@ func calc_fibb(iterations int) int {
 	iterations -= 1
 
 	for j := 0; j < iterations; j++ {
-		next, current = current + next, next
+		next, current = current+next, next
 	}
 	return current
 }
