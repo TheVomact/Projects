@@ -7,14 +7,15 @@ func main() {
 	var unit, to_unit string
 
 	fmt.Println("Enter the value and its unit mass.")
-	fmt.Scanf("%d %s\n", &num, &unit)
-	if !sanitizeInput(unit) {
+	_, err := fmt.Scanf("%d %s\n", &num, &unit)
+	if err != nil || !sanitizeInput(unit) {
 		fmt.Println("Invalid input.")
 		return
 	}
+
 	fmt.Println("Enter the unit to which to convert the amount.")
-	fmt.Scanln(&to_unit)
-	if !sanitizeInput(to_unit) {
+	_, err = fmt.Scanln(&to_unit)
+	if err != nil || !sanitizeInput(to_unit) {
 		fmt.Println("Invalid input.")
 		return
 	}
